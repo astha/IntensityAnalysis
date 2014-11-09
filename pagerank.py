@@ -8,6 +8,8 @@ g = open(sys.argv[2], 'r')
 
 pos_points = f.readlines();
 neg_points = g.readlines();
+f.close()
+g.close()
 
 words = [s.split(' ', 1)[0] for s in pos_points] + [s.split(' ', 1)[0] for s in neg_points]
 
