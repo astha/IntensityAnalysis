@@ -3,6 +3,8 @@ import sys
 import operator
 from operator import itemgetter
 
+# run as python pagerank.py positiveAdjectivesFile negativeAdjectivesFile
+
 f = open(sys.argv[1], 'r')
 g = open(sys.argv[2], 'r')
 

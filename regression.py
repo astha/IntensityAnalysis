@@ -1,6 +1,7 @@
 import sys, re
 
-# presence feature vector
+#run as python regression.py reviewFile ratingFile
+
 from sklearn import linear_model
 from numpy import *
 adjectives = {}
@@ -14,6 +15,10 @@ while line:
 f.close()
 
 size = len(adjectives)
+
+ratingToIntensity = {0: 2, 1: 1, 2: 1, 3: 2} #intensity only
+# ratingToIntensity = {0: 0, 1: 1, 2: 2, 3: 3} #normal values
+# ratingToIntensity = {0: -2, 1: -1, 2: 1, 3: 2} #signed values
 
 def replaceThreeOrMore(word):
   pattern = re.compile(r"(.)\1\1+", re.DOTALL) #re.DOTALL means . represents any character including '\n'
@@ -40,34 +45,36 @@ fp = open(sys.argv[1], 'r')
 rp = open(sys.argv[2], 'r')
 line = fp.readline()
 k = 0
+print("Reading reviews and ratings ...")
 while line:
 	if (k % 5 == 0):
 		testFeatures.append(process(line))
-		testRating.append([float(rp.readline())])
+		testRating.append([float(ratingToIntensity[int(rp.readline())])])
 	else:
 		features.append(process(line))
-		rating.append([float(rp.readline())])
+		rating.append([float(ratingToIntensity[int(rp.readline())])])
 	line = fp.readline()
 	k += 1
 fp.close()
 rp.close()
 
-print("Learning regression values")
+print("Learning regression values ...")
 
 clf = linear_model.LinearRegression()
 clf.fit(features, rating)
 for i in range(len(clf.coef_[0])):
-	if (clf.coef_[0][i] > 100000 or clf.coef_[0][i] < -100000):
+	if (abs(clf.coef_[0][i]) > 100000): #removing arbitrary values
 		clf.coef_[0][i] = 0
 	
 obtainedRating = clf.predict(testFeatures)
 diff = array(testRating) - array(obtainedRating)
 error = sum(abs(diff))
 
-# print(clf.predict([[1]]))
 print "Total Error for " + str(len(testRating)) + " reviews = " + str(error)
 # print(clf.coef_)
 
+for x,y in zip(sorted(adjectives.keys()), clf.coef_[0]):
+	print x + " " + str(y)
 
 
 
