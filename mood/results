@@ -1,5 +1,16 @@
+{'CALM': 0, 'QUIET': 1}
+{'FURIOUS': 2, 'ANGRY': 1, 'TENSE': 0}
+
+
 CALM:		 97.1544124953
 QUIET:		 91.2768412752
 TENSE:		 86.8133853864
 ANGRY:		 95.8334952693
 FURIOUS:		 100.0
+
+
+tau_positive_class =  1.0
+tau_negative_class =  1.0
+spear_positive_class =  1.0
+spear_negative_class =  1.0 
+

@@ -1,0 +1,14 @@
+['extraordinary' 'excellent' 'superb' 'great' 'decent']
+[ 0.07395496  0.00572954  0.00624695  0.00188713  0.03421959]
+5
+
+
+extraordinary:		 0.0739549608401
+decent:		 0.0342195940642
+superb:		 0.00624694704833
+excellent:		 0.00572954273381
+great:		 0.00188712848423
+
+
+tau =  0.2
+spear =  0.3

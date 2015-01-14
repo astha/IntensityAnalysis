@@ -17,5 +17,5 @@ do
 	echo "grep -i -m1 '^$name ' word_projections-1600.txt >> $1/negative" | /bin/bash
 done < $1/adj_neg
 
-echo "Running pagerank algorithm now ..."
+ echo "Running pagerank algorithm now ..."
 python pagerank.py $1/positive $1/negative > $1/results

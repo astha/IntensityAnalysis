@@ -1,3 +1,7 @@
+{'HUGE': 7, 'GIANT': 0, 'COLOSSAL': 1, 'BIG': 10, 'HUMONGOUS': 5, 'ENORMOUS': 2, 'LARGE': 8, 'IMMENSE': 6, 'OVERSIZE': 9, 'GIGANTIC': 4, 'GARGANTUAN': 3}
+{'DIMINUTIVE': 0, 'SMALL': 2, 'LITTLE': 1, 'TINY': 4, 'PUNY': 3}
+
+
 GIANT:		 100.0
 COLOSSAL:		 95.0768496501
 OVERSIZE:		 94.2446361561
@@ -14,3 +18,10 @@ PUNY:		 87.6340170666
 SMALL:		 88.5950860866
 DIMINUTIVE:		 97.1436616729
 LITTLE:		 99.6371423423
+
+
+tau_positive_class =  0.127272727273
+tau_negative_class =  -0.8
+spear_positive_class =  0.181818181818
+spear_negative_class =  -0.9 
+

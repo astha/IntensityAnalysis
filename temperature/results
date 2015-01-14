@@ -1,5 +1,17 @@
-HOT:		 100.0
-STICKY:		 99.7102856026
-WARM:		 92.7051611004
-COLD:		 95.713259987
-MILD:		 99.2303711484
+{'HOT': 0, 'WARM': 2, 'STICKY': 1}
+{'MILD': 0, 'FREEZING': 2, 'COLD': 1}
+
+
+HOT:		 98.0589062144
+STICKY:		 96.6812367045
+WARM:		 92.1862268386
+COLD:		 91.7769517414
+MILD:		 95.149418016
+FREEZING:		 100.0
+
+
+tau_positive_class =  1.0
+tau_negative_class =  0.333333333333
+spear_positive_class =  1.0
+spear_negative_class =  0.5 
+

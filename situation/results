@@ -1,5 +1,16 @@
+{'TERRIFIC': 0, 'WONDERFUL': 1, 'INCREDIBLE': 2}
+{'TERRIBLE': 1, 'HORRIBLE': 0}
+
+
 TERRIFIC:		 100.0
 WONDERFUL:		 93.9162919113
 INCREDIBLE:		 90.6506086963
 TERRIBLE:		 92.9339732687
 HORRIBLE:		 96.777293803
+
+
+tau_positive_class =  1.0
+tau_negative_class =  -1.0
+spear_positive_class =  1.0
+spear_negative_class =  -1.0 
+
