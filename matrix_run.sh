@@ -1,14 +1,20 @@
 #!/bin/bash
 
-# for file in ./RakshaList/*
-# do
-#   echo "python pre_process.py $file > astha" | /bin/bash
-#   mv astha $file
-# done
+rm -rf vectors2
+mkdir vectors2
+mkdir vectors2/Scales-of-Adjectives
 
+for file in ./Scales-of-Adjectives/*
+do
+  echo "Processing $file..."
+  echo "python pre_process.py $file vectors/$file vectors2/$file" | /bin/bash
+done
 
-# rm -rf vectors
-# mkdir vectors
+rm -rf vectors
+mkdir vectors
+mv vectors2/Scales-of-Adjectives/* vectors
+rm -rf vectors2
+
 # mkdir vectors/RakshaList
 # for file in ./RakshaList/*
 # do
@@ -32,7 +38,7 @@
 # echo "Running pagerank algorithm now ..."
 # python pagerank.py $1/positive $1/negative > $1/results
 
-for file in vectors/RakshaList/*
+for file in ./vectors/*
 do
   echo "python matrix.py $file > astha" | /bin/bash
   mv astha final/$file
