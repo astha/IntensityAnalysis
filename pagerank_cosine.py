@@ -44,10 +44,14 @@ distances = zeros((count1 + count2, count1 + count2))
 
 for i in range(count1):
 	for j in range(count2):
-		diff = points1[i] - points2[j]
-		norm = apply_along_axis(linalg.norm, 0, diff)
-		distances[i][count1 + j] = norm
-		distances[count1 + j][i] = norm
+		norm1 = apply_along_axis(linalg.norm, 0, points1[i])
+		norm2 = apply_along_axis(linalg.norm, 0, points2[j])
+		dotp = dot(points1[i],points2[j])
+		dotp/=norm1
+		dotp/=norm2
+		
+		distances[i][count1 + j] = 1-dotp
+		distances[count1 + j][i] = 1-dotp
 
 # for i in range(count1+count2):
 # 	for j in range(count1+count2):

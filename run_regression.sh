@@ -5,7 +5,7 @@ echo "Finding Positive Adjective Vectors ..."
 while read word
 do 
 	name=$word
-	echo "grep -i -m1 '^$name ' results >> $1/positive_regression" | /bin/bash
+	echo "grep -i -m1 '^$name ' results >> $1/positive_regression" | /bin/bash	
 done < $1/adj_pos
 
 echo "Finding Negative Adjective Vectors ..."
