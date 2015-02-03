@@ -1,0 +1,4 @@
+An Entity is evaluated for whether or not it belongs to a particular Type in a context where its category membership is doubtful. The criterion or criteria that are relevant to evaluating Type membership depend on the individual lexical units and/or on the context. Typically, either the material composition of the Entity, its method of creation, or the identity (and proper authority) of its creators are critical for proper category membership. Note that Entity also covers behaviors.
+
+artificial.a, bogus.a, counterfeit.a, ersatz.a, fake.a, false.a, genuine.a, phoney.a, phoney.n, pseudo.a
+
